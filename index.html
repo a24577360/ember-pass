@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  
+  <!-- iOS PWA Meta -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="燼守關" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="theme-color" content="#1a0a12" />
+  <meta name="description" content="微18禁塔防 · 性感魔女守護餘燼關隘" />
+  
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='40' fill='%231a0a12'/><circle cx='90' cy='68' r='32' fill='%23e89b9a'/><ellipse cx='90' cy='125' rx='38' ry='42' fill='%23c45a6a'/><circle cx='78' cy='62' r='4' fill='%231a0a12'/><circle cx='102' cy='62' r='4' fill='%231a0a12'/><path d='M75 78 Q90 90 105 78' stroke='%23ff6b8a' stroke-width='3' fill='none'/></svg>" />
+  
+  <title>燼守關 Ember Pass</title>
+  <link rel="stylesheet" href="src/css/style.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- Start Screen -->
+    <div id="start-screen" class="screen active">
+      <div class="title-block">
+        <div class="flame-deco">✦</div>
+        <h1>燼守關</h1>
+        <h2>Ember Pass</h2>
+        <p class="tagline">性感魔女們 · 守護餘燼關隘</p>
+      </div>
+      <button id="btn-start" class="btn primary">開始守護</button>
+      <div class="howto">
+        <p>召喚魔女攔截敵人 → 撐過所有波次 → 守護關隘</p>
+        <p class="hint">點擊空地召喚 · 點擊已召喚的魔女可解散</p>
+        <p class="ios-tip">iPhone：用 Safari 開啟後點「分享」→「加入主畫面」即可全螢幕遊玩</p>
+      </div>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="game-screen" class="screen">
+      <div id="hud">
+        <div class="hud-left">
+          <div class="stat"><span class="label">餘燼</span> <span id="gold">100</span></div>
+          <div class="stat"><span class="label">關隘</span> <span id="lives">20</span></div>
+          <div class="stat"><span class="label">波次</span> <span id="wave">0</span>/<span id="max-wave">15</span></div>
+        </div>
+        <div class="hud-right">
+          <button id="btn-next-wave" class="btn small" disabled>下一波</button>
+          <button id="btn-speed" class="btn small">×1</button>
+        </div>
+      </div>
+
+      <div id="canvas-wrap">
+        <canvas id="game-canvas"></canvas>
+      </div>
+
+      <div id="tower-bar">
+        <div class="tower-btn selected" data-type="ember" title="餘燼魔女 · 基礎攻擊">
+          <div class="tower-icon ember"></div>
+          <span>餘燼魔女</span>
+          <span class="cost">50</span>
+        </div>
+        <div class="tower-btn" data-type="flame" title="烈焰魔女 · 範圍灼燒">
+          <div class="tower-icon flame"></div>
+          <span>烈焰魔女</span>
+          <span class="cost">90</span>
+        </div>
+        <div class="tower-btn" data-type="barrage" title="彈幕魔女 · 快速連射">
+          <div class="tower-icon barrage"></div>
+          <span>彈幕魔女</span>
+          <span class="cost">120</span>
+        </div>
+        <div class="tower-btn" data-type="frost" title="寒霜魔女 · 減速敵人">
+          <div class="tower-icon frost"></div>
+          <span>寒霜魔女</span>
+          <span class="cost">80</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- End Screen -->
+    <div id="end-screen" class="screen">
+      <div class="end-content">
+        <h1 id="end-title">關隘失守</h1>
+        <p id="end-msg">灰燼大軍突破了防線…</p>
+        <div class="end-stats">
+          <div>擊殺 <span id="stat-kills">0</span></div>
+          <div>存活波次 <span id="stat-waves">0</span></div>
+        </div>
+        <button id="btn-restart" class="btn primary">再次守護</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="src/js/main.js"></script>
+</body>
+</html>

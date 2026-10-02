@@ -1,0 +1,18 @@
+{
+  "name": "燼守關 Ember Pass",
+  "short_name": "燼守關",
+  "description": "微18禁塔防 · 性感魔女守護餘燼關隘",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#12080e",
+  "theme_color": "#1a0a12",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='40' fill='%231a0a12'/><circle cx='90' cy='68' r='32' fill='%23e89b9a'/><ellipse cx='90' cy='125' rx='38' ry='42' fill='%23c45a6a'/><circle cx='78' cy='62' r='4' fill='%231a0a12'/><circle cx='102' cy='62' r='4' fill='%231a0a12'/><path d='M75 78 Q90 90 105 78' stroke='%23ff6b8a' stroke-width='3' fill='none'/></svg>",
+      "sizes": "180x180",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
